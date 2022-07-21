@@ -80,8 +80,7 @@ class _HomeState extends State<Home> {
     var city = cityNames[_random.nextInt(cityNames.length)];
 
 
-    Map info = {};
-    info = ModalRoute.of(context)!.settings.arguments as Map;
+    Map info = ModalRoute.of(context)!.settings.arguments as Map;
 
     String temperature = ((info['temp_value']).toString().substring(0,4));
     String icon=info['icon_value'];
@@ -99,7 +98,7 @@ class _HomeState extends State<Home> {
       //     backgroundColor: Colors.blue,
       //   ),
       // ),
-
+      resizeToAvoidBottomInset: false,
       //appbar with gradient bg
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(0),
@@ -118,6 +117,7 @@ class _HomeState extends State<Home> {
       ),
 
       body: SafeArea(
+
         child: Container( //Main Container
 
           decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
                   children: [
                     GestureDetector(
                       onTap: (){
-                        Navigator.pushNamed(context, "/loading",arguments: [searchController.text]
+                        Navigator.pushNamed(context, "/loading",arguments: {"search_text":searchController.text}
                         );
 
                       },

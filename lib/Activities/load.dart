@@ -3,14 +3,14 @@ import 'package:wheather_app/Worker/worker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
-class Loading extends StatefulWidget {
-  const Loading({Key? key}) : super(key: key);
+class Load extends StatefulWidget {
+  const Load({Key? key}) : super(key: key);
 
   @override
-  State<Loading> createState() => _LoadingState();
+  State<Load> createState() => _LoadState();
 }
 
-class _LoadingState extends State<Loading> {
+class _LoadState extends State<Load> {
 
   String temp="";
   String airSpd="";
@@ -33,7 +33,7 @@ class _LoadingState extends State<Loading> {
     airSpd=instance.air_speed;
     hum=instance.humidity;
     icon=instance.icon;
-    
+
     Future.delayed(Duration(seconds: 2),(){Navigator.pushReplacementNamed(context, '/home', arguments: {
       "temp_value":temp,
       "hum_value":hum,
@@ -55,7 +55,7 @@ class _LoadingState extends State<Loading> {
     super.initState();
     print("Om Namo Bhagwate Vasudevaye");
 
-    print("task 1234567");
+    print("task 1234567 load page");
 
 
   }
@@ -64,31 +64,9 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
 
-    print("task 8909");
-    print(city);
-    //
-    // try
-    // {
-      Map search = ModalRoute.of(context)?.settings.arguments as Map;
-      if(search['search_text']!=null)
-      city = search['search_text'];
+    print("task 8909 load page");
 
-      print("city$city");
-      startApp();
-
-    // }
-    // catch(e)
-    // {
-    //   print("Hari Bol");
-    //   print(city);
-    //   startApp();
-    // }
-
-
-
-
-    print("task 1234");
-
+    startApp();
     return Scaffold(
       body: Center(
         child: Column(
@@ -113,7 +91,7 @@ class _LoadingState extends State<Loading> {
           ],
         ),
       ),
-          backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue,
     );
   }
 }
